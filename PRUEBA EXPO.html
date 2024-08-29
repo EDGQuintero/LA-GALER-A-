@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+
+            background-image:url("IMAGENES PAGINA/Fondo.jpg");
+            background-position: center; /* Centra la imagen */
+        }
+
+        header {
+            text-align: center;
+            padding: 1%;
+            background-color: #111;
+            border-bottom: 1% solid #444;
+            margin-bottom: 2%;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .slideshow-container img {
+            width: 60%;
+            max-height: 60%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .slideshow-container img:hover {
+            transform: scale(1.05);
+            border-color: #fff;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 70%;
+            width: auto;
+            padding: 6%;
+            margin-top: -22%;
+            color: white;
+            font-weight: bold;
+            font-size: 150%;
+            transition: 0.6s ease;
+            border-radius: 0 3% 3% 0;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3% 0 0 3%;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3% 0 0 3%;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2%;
+        }
+
+        .gallery img {
+            margin: 2%;
+            max-width: 30%;
+            max-height: 30%;
+            object-fit: cover;
+            border: 2% solid #444;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.3);
+            border-color: #fff;
+        }
+/* PROTECCCION */
+img {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+        </script>
+ <!-- PROTECCION CIERRE -->
+</head>
+<body>
+    <header>
+        <h1>Galería de Imágenes</h1>
+    </header>
+    <main>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="GALERIA/Imagen de inicio.png" alt="Proyecto 1">
+            </div>
+            <div class="mySlides">
+                <img src="GALERIA/1.png" alt="Proyecto 1">
+            </div>
+            <div class="mySlides">
+                <img src="GALERIA/2.png" alt="Proyecto 1">
+            </div>
+            <!-- Añade más imágenes aquí -->
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div class="gallery">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">        
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">        
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">        
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">        
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <img src="GALERIA/1.png" alt="Proyecto 1">
+            <!-- Añade más imágenes aquí -->
+        </div>
+    </main>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
